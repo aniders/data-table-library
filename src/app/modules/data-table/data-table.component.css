@@ -1,0 +1,50 @@
+  /* Structure */
+  .data-table-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .data-table-header {
+    font-size: 18px;
+    min-height: 56px;
+    max-height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 8px 24px 0;
+    font-size: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    flex-grow: 1;
+    margin-top: 8px;
+  }
+  
+  .data-table-no-results {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-size: 12px;
+    font-style: italic;
+  }
+  
+  .mat-row:hover {
+    background: #f5f5f5;
+  }
+  
+  .mat-row:active {
+    background: #eaeaea;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  .filter-result{
+    right: 30px;
+  }
+  

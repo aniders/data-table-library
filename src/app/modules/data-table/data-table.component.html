@@ -1,0 +1,43 @@
+
+<div class="data-table-header">
+  {{getSearchResultHeader()}}
+  <div class="filter-result">
+  <mat-form-field floatPlaceholder="never" >
+    <input matInput #filter placeholder="Filter {{this.searchResultDefinition.type}}">
+  </mat-form-field>
+</div>
+</div>
+<div class="data-table-container mat-elevation-z8">
+
+  <div class="data-table-no-results"
+       [style.display]="isNoResult() ? '' : 'none'">{{getNoResultText()}}
+  </div>
+  <div class="data-table-container mat-elevation-z8">
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+          <div *ngFor="let column of getColumns()">
+            <ng-container matColumnDef="{{column.propertyName}}">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.header}} </mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                  <app-data-table-text-cell
+                  [value]="row[column.propertyName]"
+                  [type]="column.type"
+                  [formatter]="column.formatter">
+                  </app-data-table-text-cell>
+              </mat-cell>
+            </ng-container>
+            </div>
+
+          <mat-header-row *matHeaderRowDef="getDisplayedColumns()"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: getDisplayedColumns();">
+          </mat-row>
+      </mat-table>
+
+
+  <mat-paginator #paginator
+                [length]="getDataLength()"
+                [pageIndex]="0"
+                [pageSize]="getDataTablepageSize()"
+                [pageSizeOptions]="getDataTablepageSizeOptions()">
+  </mat-paginator>
+</div>
