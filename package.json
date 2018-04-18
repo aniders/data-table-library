@@ -1,6 +1,6 @@
 {
-  "name": "my-component-library",
-  "version": "0.0.0",
+  "name": "datatable-library",
+  "version": "0.0.1-SNAPSHOT",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
